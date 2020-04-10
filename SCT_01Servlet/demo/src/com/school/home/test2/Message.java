@@ -1,4 +1,4 @@
-package com.school.home.test;
+package com.school.home.test2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,18 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.catalina.tribes.group.Response;
-
 /**
- * Servlet implementation class MyServlet
+ * Servlet implementation class Message
  */
-public class StudentMessage extends HttpServlet {
+public class Message extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public StudentMessage() {
+    public Message() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,15 +27,23 @@ public class StudentMessage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html;charset=UTF-8");//设置服务器给客户端响应的内容类型，指定编码方式解决返回给客户端中文乱码的问题
-        request.setCharacterEncoding("UTF-8");//解决Post请求的中文乱码问题
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		String username = request.getParameter("username");
+		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		String sex = request.getParameter("sex");
-		out.println("用户名为：" + username + "<br>");
-		out.println("密码为：" + password + "<br>");
-		out.println("性别为：" + sex);
+		String date = request.getParameter("date");
+		out.println("用户名为：" + name + "<br />");
+		out.println("密码为：" + password + "<br />");
+		out.println("性别为：" + sex + "<br>");
+		String [] list = request.getParameterValues("hobby");
+		String hobby = "";
+		for (String s : list) {
+			hobby += s + "、";
+		}
+		out.println("爱好为：" + hobby + "<br>");
+		out.println("日期为：" + date + "<br>");
 	}
 
 	/**
