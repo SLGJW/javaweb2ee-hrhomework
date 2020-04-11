@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Login
  */
-public class Login extends HttpServlet {
+public class Result extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public Result() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,25 +27,23 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.println("<html>"
-				+ "<head>"
-				+ "<title>登录</title>"
-				+ "</head>"
-				+ "<body>"
-				+ "<form action = 'Message' method = 'post'>"
-				+ "用户名：<input type = 'text' name = 'name' /><br />"
-				+ "密码：<input type='password' name = 'password' /><br />"
-				+ "性别：<input type=\"radio\" name=\"sex\" value=\"男\" />男<input type=\"radio\" name=\"sex\" value=\"女\" />女<br>\r\n" 
-				+ "爱好：<input type=\"checkbox\" name = \"hobby\" value = \"Java\">Java\r\n" + 
-				"<input type=\"checkbox\" name = \"hobby\" value = \"python\">python\r\n" + 
-				"<input type=\"checkbox\" name = \"hobby\" value = \"c\">c\r\n" + 
-				"<input type=\"checkbox\" name = \"hobby\" value = \"c++\">c++<br>"
-				+ "日期：<input type=\"date\" name=\"date\" ><br>"
-				+ "<input type='submit' value ='登录' />"
-				+ "</body>"
-				+ "</html>");
+		String name = request.getParameter("username");
+		String password = request.getParameter("password");
+		String sex = request.getParameter("sex");
+		String date = request.getParameter("date");
+		out.println("用户名为：" + name + "<br />");
+		out.println("密码为：" + password + "<br />");
+		out.println("性别为：" + sex + "<br>");
+		String [] list = request.getParameterValues("hobby");
+		String hobby = "";
+		for (String s : list) {
+			hobby += s + "、";
+		}
+		out.println("爱好为：" + hobby + "<br>");
+		out.println("日期为：" + date + "<br>");
 	}
 
 	/**

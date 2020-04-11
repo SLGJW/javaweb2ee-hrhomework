@@ -1,7 +1,6 @@
 package com.school.home.test2;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -29,21 +28,7 @@ public class Message extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		String name = request.getParameter("name");
-		String password = request.getParameter("password");
-		String sex = request.getParameter("sex");
-		String date = request.getParameter("date");
-		out.println("用户名为：" + name + "<br />");
-		out.println("密码为：" + password + "<br />");
-		out.println("性别为：" + sex + "<br>");
-		String [] list = request.getParameterValues("hobby");
-		String hobby = "";
-		for (String s : list) {
-			hobby += s + "、";
-		}
-		out.println("爱好为：" + hobby + "<br>");
-		out.println("日期为：" + date + "<br>");
+		request.getRequestDispatcher("Result").forward(request, response);
 	}
 
 	/**

@@ -21,13 +21,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Login</display-name>
-    <servlet-name>Login</servlet-name>
-    <servlet-class>com.school.home.test2.Login</servlet-class>
+    <display-name>Result</display-name>
+    <servlet-name>Result</servlet-name>
+    <servlet-class>com.school.home.test2.Result</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Login</servlet-name>
-    <url-pattern>/Login</url-pattern>
+    <servlet-name>Result</servlet-name>
+    <url-pattern>/Result</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
