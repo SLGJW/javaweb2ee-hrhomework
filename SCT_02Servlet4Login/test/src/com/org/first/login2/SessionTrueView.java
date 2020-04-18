@@ -35,9 +35,9 @@ public class SessionTrueView extends HttpServlet {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("username") != null) {		
 			PrintWriter out = response.getWriter();
-			out.println("<h1>µÇÂ¼³É¹¦</h1><br>");
-			out.println("<h3>»¶Ó­" + session.getAttribute("username") + "</h3>&nbsp&nbsp"
-					+ "<a href = 'SessionMessage?count=1'>×¢Ïú</a>");
+			out.println("<h1>ç™»å½•æˆåŠŸ</h1><br>");
+			out.println("<h3>æ¬¢è¿" + session.getAttribute("username") + "</h3>&nbsp&nbsp"
+					+ "<a href = 'SessionMessage?count=1'>æ³¨é”€</a>");
 		}else {
 			response.sendRedirect("Login2.jsp");
 		}

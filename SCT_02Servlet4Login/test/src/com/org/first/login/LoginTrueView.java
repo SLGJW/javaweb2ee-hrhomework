@@ -45,7 +45,7 @@ public class LoginTrueView extends HttpServlet {
 			if (username != "") {
 				
 				PrintWriter out = response.getWriter();
-				out.println("<h1>¹§Ï²Äã,<h1>" + username + "µÇÂ¼³É¹¦!" + "<a href = 'LoginMessage?count=0'>[×¢Ïú]<a>");
+				out.println("<h1>ç™»å½•æˆåŠŸ,<h1>" + username + "æ¬¢è¿ä½ !" + "<a href = 'LoginMessage?count=0'>[æ³¨é”€]<a>");
 			}else {
 				
 				response.sendRedirect("Login.jsp");

@@ -32,8 +32,8 @@ public class LoginErrorView extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.println("µÇÂ¼Ê§°Ü<br>");
-		out.println("<a href = 'Login.jsp'>ÖØĞÂµÇÂ¼Çëµã»÷</a>");
+		out.println("ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼<br>");
+		out.println("<a href = 'Login.jsp'>ç‚¹å‡»é‡æ–°ç™»å½•</a>");
 	}
 
 	/**
