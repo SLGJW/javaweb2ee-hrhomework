@@ -34,16 +34,15 @@ public class LoginMessage extends HttpServlet {
 		String password = request.getParameter("password");
 		String count = request.getParameter("count");
 		Cookie cookie = new Cookie("username",username);
-		cookie.setMaxAge(600);
-		response.addCookie(cookie);
-		cookie = new Cookie("password", password);
-		cookie.setMaxAge(600);
-		response.addCookie(cookie);
 		if (count != null) {
 			cookie.setMaxAge(0);
+			response.addCookie(cookie);
 			response.sendRedirect("Login.jsp");
+			
 		}else {
 			if (username.equals("admin") && password.equals("123")) {
+				cookie.setMaxAge(600);
+				response.addCookie(cookie);
 				request.getRequestDispatcher("LoginTrueView").forward(request, response);
 			}else {
 				response.sendRedirect("LoginErrorView");
